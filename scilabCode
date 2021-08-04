@@ -1,0 +1,15 @@
+clc;
+clear;
+close;
+n1=input('Enter the value of core refractive index = ');
+n2=input('Enter the value of cladding refractive index = ');
+R=input('Enter the value of radius of curvature of bend in m = ');
+lambda=input('Enter value of wavelength in micrometer = ');
+c1=1.2;
+c2=0.5;
+delta=(n1^2-n2^2)/(2*n1^2);
+Rc=(3*lambda*1e-6)/(4*3.14*delta);
+alpha=c1*exp(-c2*R);
+alphadb=10*log(alpha);
+disp('Bending loss in db = ',alphadb);
+disp('Critical radius in m = ',Rc);
